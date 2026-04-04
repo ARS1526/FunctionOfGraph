@@ -9,10 +9,10 @@ SDLTTF = -IC:/Soft/SDL3_ttf-3.2.0/x86_64-w64-mingw32/include/ -LC:/Soft/SDL3_ttf
 ARGS:=""
 
 standard:
-	$(CPPFLAGG) $(DEBUG) $(SDL)
+	$(CPPFLAGG) $(DEBUG)
 
 Realease: Clean
-	$(CPPFLAGG) $(REALEASE) $(SDL)
+	$(CPPFLAGG) $(REALEASE)
 
 
 Vic:

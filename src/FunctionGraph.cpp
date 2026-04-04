@@ -1,5 +1,7 @@
 #include <iostream>//
 #include <fstream>
+#include <string>
+#include <cmath>
 #include "Extra.hpp"
 
 int FunInPPM(int Widht, int Height)
@@ -14,12 +16,12 @@ int FunInPPM(int Widht, int Height)
     int PolH = IMAGE_HEIGHT/2;
     int var = 0;//
 
-    for(int j = IMAGE_WIDHT-1; j >= 0; j--)
+    for(int y = PolH; y >= PolH*-1; y--)
     {
-        for(int i = 0; i < IMAGE_HEIGHT; i++)
+        for(int x = PolW*-1; x < PolW; x++)
         {
-            if(j > PolH-WAxis && j < PolH+WAxis)fout<<0<<' '<<0<<' '<<0<<"\n";
-            else if(i > PolW-WAxis && i < PolW+WAxis)
+            if(x > 0-WAxis && x < 0+WAxis)fout<<0<<' '<<0<<' '<<0<<"\n";
+            else if(y < 0+WAxis && y > 0-WAxis)
             {
                 var++;//
                 fout<<0<<' '<<0<<' '<<0<<"\n";
@@ -28,7 +30,22 @@ int FunInPPM(int Widht, int Height)
             
         }
     }
+    /*
+    for (int x = PolW*-1; x < PolW; x++)
+    {
+        int y;
+        if();
+    }
+    */
+    
     std::cout<<var;//
     fout.close();
     return 0;
+}
+
+std::string Formla(std::string Formula)
+{
+    
+
+    return NULL;
 }
