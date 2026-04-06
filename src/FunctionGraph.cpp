@@ -43,7 +43,7 @@ int FunInPPM(int Widht, int Height)
     return 0;
 }
 
-std::string Formla(std::string Formula)
+std::string Formula(std::string Formula)
 {
     
 
