@@ -42,10 +42,3 @@ int FunInPPM(int Widht, int Height)
     fout.close();
     return 0;
 }
-
-std::string Formula(std::string Formula)
-{
-    
-
-    return NULL;
-}
