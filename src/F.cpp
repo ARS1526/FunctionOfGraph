@@ -3,4 +3,4 @@
 
 double F(int x)
 {
-    return 2*x;}
+    return 3*x;}

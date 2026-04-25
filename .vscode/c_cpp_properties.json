@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "./data//muparser-2.3.5/muparser-2.3.5/include/"
             ],
             "defines": [
                 "_DEBUG",

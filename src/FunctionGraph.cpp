@@ -30,13 +30,15 @@ int FunInPPM(int Widht, int Height)
             
         }
     }
-    /*
-    for (int x = PolW*-1; x < PolW; x++)
+    //fout.seekp(3, std::ios::beg);
+    for (double x = PolW*-1; x < PolW; x++)
     {
-        int y;
-        if();
+        double y = Forming(x);
+        int indent;
+
+        
     }
-    */
+    
     
     std::cout<<var;//
     fout.close();

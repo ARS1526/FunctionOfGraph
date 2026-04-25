@@ -9,7 +9,7 @@ SDLTTF = -IC:/Soft/SDL3_ttf-3.2.0/x86_64-w64-mingw32/include/ -LC:/Soft/SDL3_ttf
 ARGS:=""
 
 standard:
-	$(CPPFLAGG) $(DEBUG)
+	$(CPPFLAGG) $(DEBUG) -I./data/muparser-2.3.5/muparser-2.3.5/include/
 
 Realease: Clean
 	$(CPPFLAGG) $(REALEASE)
