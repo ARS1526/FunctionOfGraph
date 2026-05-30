@@ -5,14 +5,15 @@ REALEASE = -mwindows src/*.cpp -Iinclude/ -o bin/FunctionGraph.exe #Give file na
 SDL = -IC:/Soft/SDL3-3.2.4/x86_64-w64-mingw32/include/ -LC:/Soft/SDL3-3.2.4/x86_64-w64-mingw32/lib/ -lSDL3.dll
 SDLIMAGE = -IC:/Soft/SDL3_image-3.2.0/x86_64-w64-mingw32/include/ -LC:/Soft/SDL3_image-3.2.0/x86_64-w64-mingw32/lib/ -lSDL3_image.dll
 SDLTTF = -IC:/Soft/SDL3_ttf-3.2.0/x86_64-w64-mingw32/include/ -LC:/Soft/SDL3_ttf-3.2.0/x86_64-w64-mingw32/lib/ -lSDL3_ttf.dll
+MUPARSER = -I./include/include/ -L./lib -lmuparser.dll
 
 ARGS:=""
 
 standard:
-	$(CPPFLAGG) $(DEBUG) -I./data/muparser-2.3.5/muparser-2.3.5/include/
+	$(CPPFLAGG) $(DEBUG) $(MUPARSER)
 
 Realease: Clean
-	$(CPPFLAGG) $(REALEASE)
+	$(CPPFLAGG) $(REALEASE) $(MUPARSER)
 
 
 Vic:

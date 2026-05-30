@@ -7,18 +7,15 @@ int FInFile(std::string args);
 
 int main(int argc, char** argv)
 {
-
-    if(FInFile(argv[1]) == 1) std::cerr<<"Fuction not saved";
-
     int Widht, Height;
     Widht = std::stoi(argv[2]);
     Height = std::stoi(argv[3]);
-    FunInPPM(Widht, Height);
-    system("C:/Users/doris/OneDrive/Documents/BackApp1/ppmViewer/bin/DebugMain.exe C:/Users/doris/OneDrive/Documents/BackApp1/FunctionGraph/data/texture/FirstTest.ppm");
+    FunInPPM(Widht, Height, argv[1]);
+    system("C:/Users/doris/OneDrive/Documents/Prog/ppmViewer/bin/DebugMain.exe C:/Users/doris/OneDrive/Documents/Prog/FunctionGraph/data/texture/FirstTest.ppm");
 
     return 0;
 }
-
+#if 0
 int FInFile(std::string args)
 {
     std::fstream myFile("./src/F.cpp", std::fstream::out | std::fstream::binary | std::fstream::in);
@@ -47,7 +44,7 @@ int FInFile(std::string args)
     return 0;
 }
 
-/*
+
 int FInFile(std::string args)
 {
     std::fstream myFile("./src/Formula.txt", std::fstream::out | std::fstream::binary);
@@ -62,4 +59,5 @@ int FInFile(std::string args)
     myFile.close();
     return 0;
 }
-*/
+
+#endif

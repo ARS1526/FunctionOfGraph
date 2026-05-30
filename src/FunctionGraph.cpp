@@ -1,12 +1,11 @@
 #include <iostream>//
 #include <fstream>
-#include <string>
-#include <cmath>
+#include "include/muParser.h"
 #include "Extra.hpp"
 
-int FunInPPM(int Widht, int Height)
+int FunInPPM(int Widht, int Height, std::string Equation)
 {
-    std::ofstream fout("./data/texture/FirstTest.ppm");
+    std::ofstream fout("./data/texture/FirstTest.ppm", std::fstream::binary);
 
     const int IMAGE_WIDHT = Widht, IMAGE_HEIGHT = Height;
     fout<<"P3\n"<<IMAGE_WIDHT<<' '<<IMAGE_HEIGHT<<"\n1\n";
@@ -14,7 +13,6 @@ int FunInPPM(int Widht, int Height)
     int WAxis = 2;
     int PolW = IMAGE_WIDHT/2;
     int PolH = IMAGE_HEIGHT/2;
-    int var = 0;//
 
     for(int y = PolH; y >= PolH*-1; y--)
     {
@@ -23,24 +21,30 @@ int FunInPPM(int Widht, int Height)
             if(x > 0-WAxis && x < 0+WAxis)fout<<0<<' '<<0<<' '<<0<<"\n";
             else if(y < 0+WAxis && y > 0-WAxis)
             {
-                var++;//
                 fout<<0<<' '<<0<<' '<<0<<"\n";
             }
             else fout<<1<<' '<<1<<' '<<1<<"\n";
             
         }
     }
-    //fout.seekp(3, std::ios::beg);
-    for (double x = PolW*-1; x < PolW; x++)
+    mu::Parser parser;
+    int y;
+    for (double x = PolW*-1; x <= PolW; x++)
     {
-        double y = Forming(x);
-        int indent;
+        int NumLine = 3;
+        mu::value_type X = x;
+        parser.SetExpr(Equation);
+        parser.DefineVar("x", &X);
+        y = parser.Eval();
+        std::cout<<"Y = "<<parser.Eval()<<std::endl;//
+        NumLine += Widht*(PolH+y*-1) + (PolW+x);
+        std::cout<<"NumLine = "<<NumLine<<std::endl;// 
 
-        
+        fout.seekp(NumLine, std::ios::beg);
+        fout<<0<<' '<<0<<' '<<0<<"\n";
     }
     
-    
-    std::cout<<var;//
+       
     fout.close();
     return 0;
 }
